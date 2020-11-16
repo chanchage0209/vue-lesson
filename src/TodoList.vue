@@ -1,8 +1,8 @@
 <template>
   <div>
     <input v-model="text" />
-    <button @click="addTodo">Submit</button>
-    @click="toggleDone(item)"
+    <!-- <button @click="addTodo">Submit</button> -->
+    <button@click="addTodo">submit </button>
 
     <ul>
       <li v-for="item in list" :key="item.id">
