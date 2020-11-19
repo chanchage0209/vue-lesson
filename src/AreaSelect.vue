@@ -15,11 +15,11 @@
     {{ regionCode }}
   </div>
 </template>
+
 <script>
 import zipcode from "./zipcode.json";
 
 export default {
-  // props:["zipcode"],
   props: {
     zipcode: {
       type: Object,
@@ -34,19 +34,20 @@ export default {
     cities() {
       return this.zipcode.cities;
     },
-    region() {
+    regions() {
       const city = this.cities.find((city) => city.code === this.cityCode);
-      // this.cities
       return city ? city.regions : [];
     },
   },
   watch: {
-    cities() {
-      const [city] = this.cities;
-      if (city) {
-        this.cityCode = city.code;
-      }
-      this.cityCode = this.cities[0].code;
+    cities: {
+      handler() {
+        const [city] = this.cities;
+        if (city) {
+          this.cityCode = city.code;
+        }
+      },
+      immediate: true,
     },
     regions: {
       handler() {
@@ -55,10 +56,10 @@ export default {
           this.regionCode = region.code;
         }
       },
-      immediate:true,
+      immediate: true,
     },
-    regionCode(val){
-        this.$emit("input",val);
+    regionCode(val) {
+      this.$emit("input", val);
     },
   },
 };
