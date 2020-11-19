@@ -11,6 +11,7 @@ import Style from './Style'
 import Toggle from './Toggle'
 import Users from './Users'
 import Policy from './Policy'
+import UserTable from './UserTable'
 
 const routes = [
   { path: '/todo-list', component: TodoList, },
@@ -22,6 +23,7 @@ const routes = [
   { path: '/toggle', component: Toggle, },
   { path: '/users', component: Users, },
   { path: '/policy', component: Policy, },
+  { path: '/user-table', component: UserTable },
 ];
 
 const router = new VueRouter({ routes });

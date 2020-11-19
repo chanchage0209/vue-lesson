@@ -7,15 +7,17 @@
     <hr />
     <PolicyBasic v-if="tab === 1" />
     <PolicyType v-if="tab === 2" />
+    <PolicyPayment v-if="tab === 3" />
   </div>
 </template>
 
 <script>
 import PolicyBasic from "./PolicyBasic";
 import PolicyType from "./PolicyType";
+import PolicyPayment from "./PolicyPayment";
 
 export default {
-  components: { PolicyBasic, PolicyType },
+  components: { PolicyBasic, PolicyType,PolicyPayment },
   data: () => ({ tab: 1 }),
 };
 </script>
